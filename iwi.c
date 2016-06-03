@@ -1,0 +1,36 @@
+
+copoll (pnut) { s; s; s; } ==>
+
+	// NO ENTRANCE FROM ABOVE BUT RATHER SKIP OVER THIS OTHER-DIMENSION BEAST
+	// ACTUAL ENTRY IS NORMALLY FROM THE EVENT LOOP
+	if (0)
+		while (1)
+			if (1)
+				goto _coeventloop;
+			else
+				case -12000 - pnut:
+	// THE ACTUAL STATEMENTS ARE RUN BUT AFTERWARDS LOOP BACK TO while (1)
+				{ s; s; s; }
+	// NO FALLTHROUGH BUT RETURN TO POLLING LOOP, goto _coeventloop
+
+
+cotrigger (nut, co2) ==>
+
+	// ASYNC DELIVERY TO ANY CORO
+	co2.activate |= (1UL << nut);
+	// PROGRAM CONTINUES
+
+
+coraise (exc) ==>
+
+	// SYNC DELIVERY INTERNALLY TO CORO
+	goto exc
+	// PROGRAM PROCEEDS WITH EXCEPTION HANDLER
+
+
+cocatch (exc) ==>
+
+	// FALLTHROUGH FROM PREVIOUS COMMANDS, EITHER NORMAL OR EXCEPTION HANDLER
+	exc:
+	// AFTER EXCEPTION HANDLING, FALL THROUGH TO OTHER CODE, INCLUDING EXC HDL
+
